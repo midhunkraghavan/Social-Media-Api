@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const todoRouter = require('./todo')
-const authenticationRouter = require('./authentication')
+const authRouter = require('./auth')
 const postRouter = require('./post')
 const userRouter = require('./user')
 
@@ -11,5 +11,5 @@ router.get('/', (req, res) => [
 ])
 
 
-
+router.use('/api/auth', authRouter)
 module.exports = router
